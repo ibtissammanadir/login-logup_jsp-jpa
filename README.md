@@ -1,0 +1,20 @@
+### Projet de Connexion et Inscription avec JSF et JPA
+L'objectif principal de ce projet est de permettre aux utilisateurs de s'inscrire et de se connecter à l'application. L'application va stocker les informations des utilisateurs dans une base de données et les valider lors de la tentative de connexion.
+
+### Technologie principale
+- **Java Server Faces (JSF)** : JSF est utilisé pour la couche de présentation de l'application. Il permet de créer des interfaces utilisateur web de manière standardisée en utilisant des composants réutilisables et en facilitant l'intégration avec le backend.
+- **Java Persistence API (JPA)** : JPA est utilisée pour la couche d'accès aux données. Elle permet une interaction simplifiée avec la base de données pour la gestion des entités Java, la persistance et la récupération des données.
+
+### Architecture
+- **Modèle MVC (Modèle-Vue-Contrôleur)** : L'application suit le modèle architectural MVC, ce qui aide à séparer la logique métier (modèle), l'interface utilisateur (vue) et la logique de navigation (contrôleur), rendant ainsi l'application plus organisée et facile à maintenir.
+- **DAO (Data Access Object)** : Le modèle DAO est utilisé pour encapsuler l'accès aux données. Il offre une interface abstraite vers la base de données, permettant de séparer la logique d'accès aux données du reste de l'application.
+
+### Fonctionnalités clés
+- **Inscription** : Les utilisateurs peuvent créer un nouveau compte en fournissant des informations telles que l'identifiant, l'email et le mot de passe. Les informations sont stockées dans la base de données après validation.
+- **Connexion** : Les utilisateurs enregistrés peuvent se connecter en utilisant leur identifiant et mot de passe. L'application valide ces informations contre les données stockées dans la base de données.
+- **Internationalisation (i18n)** : L'application supporte l'internationalisation, permettant ainsi de présenter l'interface utilisateur en français et en anglais. Cela est réalisé en utilisant des fichiers de propriétés spécifiques à chaque langue pour stocker les textes de l'interface utilisateur.
+- **Validation** : Des validateurs JSF sont utilisés pour valider les données entrées par l'utilisateur lors de l'inscription ou de la connexion, assurant ainsi que les données sont correctes et conformes aux exigences avant d'être traitées ou stockées.
+
+### Déploiement
+L'application peut être déployée sur n'importe quel serveur d'applications Java EE, tel que tomcat, etc.
+
