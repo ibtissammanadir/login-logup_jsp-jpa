@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <h:outputStylesheet library="webjars" name="bootstrap/5.3.3/css/bootstrap.min.css" />
+    <title>#{msg['register.title']}</title>
+</h:head>
+<body>
+<div class="container mt-5">
+    <h:form>
+        <h:commandButton value="Français" action="#{language.changeLanguage('fr')}" styleClass="btn btn-primary me-2"/>
+        <h:commandButton value="English" action="#{language.changeLanguage('en')}" styleClass="btn btn-secondary"/>
+    </h:form>
+
+
+    <h:form>
+        <h:messages errorClass="alert alert-danger"
+                    infoClass="alert alert-info"
+                    warnClass="alert alert-warning"
+                    fatalClass="alert alert-danger"
+                    layout="table"/>
+        <div class="card shadow-lg">
+            <div class="card-header bg-primary text-white">#{msg['register.title']}</div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <h:outputLabel for="firstname" value="#{msg['label.firstname']}" class="form-label"/>
+                    <h:inputText id="firstname" value="#{userBean.currentuser.firstname}" class="form-control"/>
+                </div>
+                <div class="mb-3">
+                    <h:outputLabel for="lastname" value="#{msg['label.lastname']}" class="form-label"/>
+                    <h:inputText id="lastname" value="#{userBean.currentuser.lastname}" class="form-control"/>
+                </div>
+                <div class="mb-3">
+                    <h:outputLabel for="username" value="#{msg['label.username']}" class="form-label"/>
+                    <h:inputText id="username" value="#{userBean.currentuser.username}" class="form-control"/>
+                </div>
+                <div class="mb-3">
+                    <h:outputLabel for="email" value="#{msg['label.email']}" class="form-label"/>
+                    <h:inputText id="email" value="#{userBean.currentuser.email}" type="email" class="form-control">
+                        <f:validator validatorId="EmailValidator" />
+                    </h:inputText>
+                </div>
+                <div class="mb-3">
+                    <h:outputLabel for="phonenumber" value="#{msg['label.phonenumber']}" class="form-label"/>
+                    <h:inputText id="phonenumber" value="#{userBean.currentuser.phonenumber}" class="form-control"/>
+                </div>
+                <div class="mb-3">
+                    <h:outputLabel for="departement" value="#{msg['label.department']}" class="form-label"/>
+                    <h:inputText id="departement" value="#{userBean.currentuser.departement}" class="form-control"/>
+                </div>
+                <div class="mb-3">
+                    <h:outputLabel for="salaire" value="#{msg['label.salary']}" class="form-label"/>
+                    <h:inputText id="salaire" value="#{userBean.currentuser.salaire}" class="form-control"/>
+                </div>
+                <div class="mb-3">
+                    <h:outputLabel for="password" value="#{msg['label.password']}" class="form-label"/>
+                    <h:inputSecret id="password" value="#{userBean.currentuser.password}" class="form-control"/>
+                </div>
+                <div class="col-12 d-grid gap-2">
+                    <h:commandButton value="#{msg['button.register']}" action="#{userBean.Register}" styleClass="btn btn-primary btn-block"/>
+                </div>
+            </div>
+        </div>
+    </h:form>
+</div>
+</body>
+</html>

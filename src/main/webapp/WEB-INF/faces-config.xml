@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="3.0" xmlns="https://jakarta.ee/xml/ns/jakartaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                                  https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_3_0.xsd">
+<managed-bean>
+    <managed-bean-name>userBean</managed-bean-name>
+    <managed-bean-class>com.example.demo11.Beans.UserBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+
+</managed-bean>
+    <validator>
+        <validator-id>EmailValidator</validator-id>
+        <validator-class>com.example.demo11.Validator.EmailValidator</validator-class>
+    </validator>
+    <validator>
+        <validator-id>SalaireValidator</validator-id>
+        <validator-class>com.example.demo11.Validator.SalaireValidator</validator-class>
+    </validator>
+    <application>
+        <locale-config>
+            <default-locale>fr</default-locale>
+            <supported-locale>en</supported-locale>
+        </locale-config>
+        <resource-bundle>
+            <base-name>messages</base-name>
+            <var>msg</var>
+        </resource-bundle>
+    </application>
+
+</faces-config>
